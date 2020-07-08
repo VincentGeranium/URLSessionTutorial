@@ -30,6 +30,8 @@
 
 import Foundation
 
+var activeDownloads: [URL: Download] = [:]
+
 // Downloads song snippets, and stores in local file.
 // Allows cancel, pause, resume download.
 class DownloadService {
