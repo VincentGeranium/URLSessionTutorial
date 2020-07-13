@@ -83,14 +83,12 @@ class TrackCell: UITableViewCell {
     
     progressView.isHidden = !showDownloadControls
     progressLabel.isHidden = !showDownloadControls
-    
     pauseButton.isHidden = !showDownloadControls
     cancelButton.isHidden = !showDownloadControls
-    downloadButton.isHidden = downloaded || showDownloadControls
     
     // If the track is already downloaded, enable cell selection and hide the Download button
     selectionStyle = downloaded ? UITableViewCellSelectionStyle.gray : UITableViewCellSelectionStyle.none
-    downloadButton.isHidden = downloaded
+    downloadButton.isHidden = downloaded || showDownloadControls
   }
   
   func updateDisplay(progress: Float, totalSize: String) {
